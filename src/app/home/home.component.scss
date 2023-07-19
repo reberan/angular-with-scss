@@ -1,0 +1,9 @@
+@import "../../scss/partials/mixins";
+@import "../../scss/partials/variables";
+
+.warning-button {
+  @include warning;
+  padding: 8px 12px;
+}
+
+

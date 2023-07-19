@@ -1,4 +1,18 @@
-# NgWithScss
+# Angular Project - The Complete Sass & SCSS Course: From Beginner to Advanced ([udemy](https://www.udemy.com))
+
+The course can found here: https://www.udemy.com/course/sasscourse/
+
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
+
+## Requirements
+
+- Angular CLI: `16.1.3`
+- Node: `18.16.1`
+- Package Manager: `npm 9.7.2`
+
+## Install Dependencies
+
+Run `npm install` to install the dependencies in your terminal once moved into the checked out folder.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.3.
 

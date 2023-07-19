@@ -1,1 +1,39 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./scss/partials/variables";
+@import "./scss/partials/mixins";
+
+@include google-font("Alegreya+Sans");
+@include google-font("Titillium+Web");
+
+@include fancy-links;
+
+@include apply-to-ie-6 {
+  body {
+    font-size: 125%;
+  }
+}
+
+body {
+  overflow: hidden;
+  font-family: sans-serif;
+  color: $text-color;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $headline-font;
+}
+
+h2 {
+  @include large-text;
+}
+
+p {
+  font-family: $text-font;
+  text-align: justify;
+}
+
+a {
+  color: $link-color;
+}

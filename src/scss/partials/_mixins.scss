@@ -1,0 +1,49 @@
+@import "./defaults";
+@import "./variables";
+
+@mixin warning {
+  background-color: orange;
+  color: #fff;
+}
+
+@mixin large-text {
+  font: {
+    size: 22px;
+    weight: bold;
+  }
+  color: $secondary-color;
+}
+
+@mixin rounded($radius: $default-radius) {
+  border-radius: $radius;
+}
+
+@mixin box($radius: $default-radius, $border: $default-border) {
+  @include rounded($radius);
+  border: $border solid #333;
+}
+
+@mixin fancy-links {
+  a {
+    font-style: italic;
+    text-decoration: none;
+    letter-spacing: 0.15em;
+  }
+}
+
+@mixin box-shadow($shadows...) {
+  box-shadow: $shadows;
+  -moz-box-shadow: $shadows;
+  -webkit-shadow: $shadows;
+}
+
+@mixin apply-to-ie-6 {
+  * html {
+    @content;
+  }
+}
+
+@mixin google-font($font) {
+  $font: unquote($font);
+  @import url("https://fonts.googleapis.com/css?family=#{$font}");
+}

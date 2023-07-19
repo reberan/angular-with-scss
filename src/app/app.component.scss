@@ -1,0 +1,46 @@
+@import "./../scss/partials/variables";
+@import "./../scss/partials/mixins";
+
+#header {
+  @include box($border: 1px, $radius: 8px);
+  @include box-shadow(1px 0px 8px #00aa99, 1px 0px 8px $ternary-color);
+
+  height: $header-height;
+  background-color: $theme-color;
+
+  #main-menu {
+    display: flex;
+
+    li {
+      display: inline;
+      list-style: none;
+    }
+    a {
+      color: $menu-item-color;
+    }
+  }
+  #logo {
+  }
+}
+
+#main {
+  width: $content-width;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: calc(100vh - $footer-height);
+  margin-bottom: -$footer-height;
+
+  #content {
+    overflow: scroll;
+  }
+  #sidebar {
+  }
+}
+
+#footer {
+  @include box($border: 1px, $radius: 8px);
+
+  border: none;
+  height: $footer-height;
+  background-color: $ternary-color;
+}
