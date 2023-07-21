@@ -1,6 +1,30 @@
 @import "./defaults";
 @import "./variables";
 
+@mixin tiny-screens {
+  @media only screen and (max-width: 320px) {
+    @content;
+  }
+}
+
+@mixin small-screens {
+  @media only screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin medium-screens {
+  @media only screen and (max-width: 680px) {
+    @content;
+  }
+}
+
+@mixin large-screens {
+  @media only screen and (max-width: 960px) {
+    @content;
+  }
+}
+
 @mixin warning {
   background-color: orange;
   color: #fff;
@@ -16,6 +40,20 @@
 
 @mixin rounded($radius: $default-radius) {
   border-radius: $radius;
+}
+
+@mixin underlined {
+  text-decoration: underline;
+}
+
+@mixin circled {
+  border-radius: 50%;
+}
+
+@mixin avatar {
+  @include circled;
+  max-width: 50px;
+  max-height: 50px;
 }
 
 @mixin box($radius: $default-radius, $border: $default-border) {
@@ -46,4 +84,22 @@
 @mixin google-font($font) {
   $font: unquote($font);
   @import url("https://fonts.googleapis.com/css?family=#{$font}");
+}
+
+@mixin blue-beans {
+  @if $brand == blue-beans {
+    @content;
+  }
+}
+
+@mixin pastry-pizza {
+  @if $brand == pastry-pizza {
+    @content;
+  }
+}
+
+@mixin rogers-rovers {
+  @if $brand == rogers-rovers {
+    @content;
+  }
 }

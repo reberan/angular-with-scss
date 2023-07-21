@@ -1,52 +1,6 @@
-<header id="header">
-  <nav id="main-menu">
-    <ul>
-      <li>
-        <a
-          routerLink="/index"
-          routerLinkActive="active"
-          ariaCurrentWhenActive="page"
-          >Home</a
-        >
-      </li>
-      <li>
-        <a
-          routerLink="/about"
-          routerLinkActive="active"
-          ariaCurrentWhenActive="page"
-          >About Me</a
-        >
-      </li>
-      <li>
-        <a
-          routerLink="/portfolio"
-          routerLinkActive="active"
-          ariaCurrentWhenActive="page"
-          >Portfolio</a
-        >
-      </li>
-      <li>
-        <a
-          routerLink="/contact"
-          routerLinkActive="active"
-          ariaCurrentWhenActive="page"
-          >Get in Touch</a
-        >
-      </li>
-    </ul>
-  </nav>
-</header>
-
+<app-header></app-header>
 <div id="main" role="main">
-  <router-outlet></router-outlet>
-  <aside id="sidebar">
-    <ul>
-      <li>Item 1</li>
-      <li>Item 2</li>
-      <li>Item 3</li>
-      <li>Item 4</li>
-    </ul>
-  </aside>
+  <app-content></app-content>
+  <app-sidebar></app-sidebar>
 </div>
-
-<footer id="footer"></footer>
+<app-footer></app-footer>

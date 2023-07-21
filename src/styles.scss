@@ -1,39 +1,50 @@
+@import "./scss/partials/functions";
 @import "./scss/partials/variables";
 @import "./scss/partials/mixins";
+@import "./scss/typography";
 
-@include google-font("Alegreya+Sans");
-@include google-font("Titillium+Web");
+%highlight {
+  font-style: italic;
+}
 
-@include fancy-links;
+.error {
+  color: red;
+}
 
-@include apply-to-ie-6 {
-  body {
-    font-size: 125%;
+.subtitle {
+  @extend %highlight;
+  @extend .error;
+  text-decoration: underline;
+  font-size: em(22px);
+  @extend .foo !optional;
+}
+
+.warning-button {
+  @include warning;
+  padding: 8px 12px;
+  cursor: pointer;
+
+  &:hover {
+    color: darken($color: orange, $amount: 10%);
+    background-color: darken(#fff, 10%);
+    border: darken($color: orange, $amount: 10%) 2px solid;
   }
 }
 
-body {
-  overflow: hidden;
-  font-family: sans-serif;
-  color: $text-color;
+.cta-button {
+  @extend .warning-button;
+  @include rounded;
+  font-weight: bold;
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: $headline-font;
+.critical-error {
+  @extend .error;
+  @include rounded;
+  border: 1px solid red;
+  font-weight: bold;
+  padding: em(5px);
 }
 
-h2 {
-  @include large-text;
-}
-
-p {
-  font-family: $text-font;
-  text-align: justify;
-}
-
-a {
-  color: $link-color;
+.active-link {
+  color: $link-active-color;
 }

@@ -1,10 +1,60 @@
+@import "./functions";
+
+// Allowed values: blue-beans, pastry-pizza, rogers-rovers
+$brand: rogers-rovers;
+
+// Allowed values: high, medium, low
+$contrast: high;
+
+// Allowed values: dark, light, default
+$theme: dark;
+
 // === COLORS ===
 $text-color: #222;
 $theme-color: #170a48;
 $secondary-color: #f27731;
 $ternary-color: #ccf962;
 $link-color: $secondary-color;
+$link-active-color: red;
 $menu-item-color: white;
+$body-background-color: white;
+$header-background-color: navy;
+$footer-background-color: navy;
+
+@if $theme == dark {
+  $text-color: #eee;
+  $theme-color: #ddd;
+  $secondary-color: #ccc;
+  $ternary-color: #bbb;
+  $link-color: #eee;
+  $link-active-color: #666;
+  $menu-item-color: #aaa;
+  $body-background-color: black;
+  $header-background-color: black;
+  $footer-background-color: black;
+} @else if $theme == light {
+  $text-color: #000;
+  $theme-color: #222;
+  $secondary-color: #333;
+  $ternary-color: #444;
+  $link-color: #222;
+  $link-active-color: #555;
+  $menu-item-color: #000;
+  $body-background-color: white;
+  $header-background-color: white;
+  $footer-background-color: white;
+} @else {
+  $text-color: #222;
+  $theme-color: #170a48;
+  $secondary-color: #f27731;
+  $ternary-color: #ccf962;
+  $link-color: #0084ff;
+  $link-active-color: #003a70;
+  $menu-item-color: white;
+  $body-background-color: white;
+  $header-background-color: white;
+  $footer-background-color: white;
+}
 
 // === FONTS ===
 $text-font: "Alegreya Sans", Arial, sans-serif;
@@ -13,4 +63,8 @@ $headline-font: "Titillium Web", Georgia, serif;
 // === SIZES ===
 $header-height: 60px;
 $content-width: 960px;
-$footer-height: 90px;
+$main-width: 940px;
+$footer-height: 70px;
+$col: col-width(
+  $columns: 8,
+);

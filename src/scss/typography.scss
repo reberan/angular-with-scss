@@ -1,0 +1,70 @@
+@import "./partials/functions";
+@import "./partials/variables";
+@import "./partials/mixins";
+
+@include google-font("Alegreya+Sans");
+@include google-font("Titillium+Web");
+
+@include fancy-links;
+
+@include apply-to-ie-6 {
+  body {
+    font-size: 125%;
+  }
+}
+* {
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+body {
+  font-family: sans-serif;
+  color: $text-color;
+  color: rgb(10, 15, 10);
+  background-color: $body-background-color;
+  max-height: calc(100vh - 2%);
+  @if $contrast == high {
+    color: #666;
+  } @else if $contrast == low {
+    color: #888;
+  } @else {
+    color: #aaa;
+  }
+  @include large-screens {
+    font-size: 125%;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $headline-font;
+}
+
+h2 {
+  @include large-text;
+}
+
+p {
+  font-family: $text-font;
+  text-align: justify;
+}
+
+a {
+  color: $link-color;
+
+  @include blue-beans {
+    color: #8779ff;
+  }
+
+  &:hover {
+    color: darken($link-color, 15%);
+  }
+}
+
+nav {
+  padding: 0.4em;
+}
