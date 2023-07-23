@@ -1,8 +1,13 @@
 <aside id="sidebar">
   <ul>
-    <li>Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-    <li>Item 4</li>
+    <li *ngFor="let link of links">
+      <a
+        [routerLink]="link.path"
+        [routerLinkActive]="link.activeClassName"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page"
+        >{{ link.label }}</a
+      >
+    </li>
   </ul>
 </aside>

@@ -1,0 +1,61 @@
+<article id="testing">
+  <h2>8. Testing</h2>
+
+  <h3>8.1 Unit test</h3>
+  <p>
+    For general testing, see
+    <a href="https://wiki.sswdev.stoecklin.com/display/SOFT/Unit+Testing"
+      >Tips&Tricks</a
+    >.
+  </p>
+  <p>
+    The updating of the schema is controlled in the same way as the core
+    configuration. However, the test-config-wms-database.xml file is relevant
+    here. The value for hibernate.hbm2ddl.auto should be set to at least update.
+    To ensure that both the schema is up-to-date and that there is no legacy
+    data, the create value is optimal.
+  </p>
+  <p>
+    The test is run with DB user itest. This is also configured in the
+    <b> test-config-wms-database.xml </b>
+    file.
+  </p>
+
+  <p>
+    The beans for the services must also be made available through
+    configuration. The procedure here is analogous to the core configuration.
+  </p>
+
+  <pre> code </pre>
+
+  <p>The remote services could now also be tested in a similar way.</p>
+
+  <h2>8.2 Logging dialog</h2>
+  <p>
+    The RemoteService are injected with the help of Spring and can then be used
+    where desired. Attached is a dialog version to illustrate the integration of
+    the remote services into the application. This type must not be used for
+    test purposes. Only unit and integration tests, which can be run regularly
+    and automatically, are used for tests.
+  </p>
+  <p>
+    For this quick-and-dirty testing, a LogTestDialog was added using Swing
+    under the help menu, which displays the log data.
+  </p>
+
+  <pre> code </pre>
+
+  <p>
+    The calling action is defined below and is registered as a bean using Spring
+    in the masterconsole.xml configuration file.
+  </p>
+
+  <pre> code </pre>
+  <p>Entries in <b> masterconsole.xml </b></p>
+
+  <pre> xml </pre>
+
+  Attached is the start of the log display.
+
+  <pre> log </pre>
+</article>

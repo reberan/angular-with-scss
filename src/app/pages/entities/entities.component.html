@@ -1,0 +1,39 @@
+<article id="entities">
+  <h2>2. Entities</h2>
+  <h3>2.1 Database</h3>
+  <p>
+    In the following, the two entities Animal and Zoo are used throughout as an
+    example.
+  </p>
+  <p>
+    These entities are created as database tables and as Java POJOs (plain-old
+    Java objects).
+  </p>
+  <p>
+    A respective zoo can contain several animals and represents a one-to-many
+    relationship.
+  </p>
+  <p>
+    The object-relational mapping is specified using annotations. The tables and
+    sequences are created automatically if this is activated for Hibernate (see
+    P&S CB - Configuration).
+  </p>
+
+  <h3>2.2 Entity Classes</h3>
+  <p>
+    Below are the listings of the Zoo and Animal classes as simple Java POJOs.
+  </p>
+
+  <p>
+    The DTO classes used in it will be addressed later. The Animal objects, as
+    can be seen in the data model, are related to the associated Zoo object.
+    This mapping is declared using annotations.
+  </p>
+
+  <pre>class Animal</pre>
+
+  The Zoo objects in turn contain a list of Animals which can then be accessed.
+  Also declared here by annotations.
+
+  <pre>class Zoo</pre>
+</article>

@@ -1,17 +1,28 @@
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { PortfolioComponent } from './pages/portfolio/portfolio.component';
-import { AboutComponent } from './pages/about/about.component';
-import { ContactComponent } from './pages/contact/contact.component';
+
 import { HomeComponent } from './pages/home/home.component';
+import { OverviewComponent } from './pages/overview/overview.component';
+import { EntitiesComponent } from './pages/entities/entities.component';
+import { RepositoryComponent } from './pages/repository/repository.component';
+import { LocalServicesComponent } from './pages/local-services/local-services.component';
+import { ConfigurationComponent } from './pages/configuration/configuration.component';
+import { TestingComponent } from './pages/testing/testing.component';
+import { DatabaseQueriesComponent } from './pages/database-queries/database-queries.component';
+import { RemoteServicesComponent } from './pages/remote-services/remote-services.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'index', pathMatch: 'full' },
   { path: 'index', component: HomeComponent },
-  { path: 'portfolio', component: PortfolioComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'contact', component: ContactComponent },
+  { path: 'overview', component: OverviewComponent },
+  { path: 'entities', component: EntitiesComponent },
+  { path: 'repository', component: RepositoryComponent },
+  { path: 'local-services', component: LocalServicesComponent },
+  { path: 'database-queries', component: DatabaseQueriesComponent },
+  { path: 'remote-services', component: RemoteServicesComponent },
+  { path: 'configuration', component: ConfigurationComponent },
+  { path: 'testing', component: TestingComponent },
   { path: '**', component: NotFoundComponent },
 ];
 

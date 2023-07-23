@@ -1,0 +1,21 @@
+@import "src/scss/partials/variables";
+
+#sidebar {
+  float: right;
+  width: 3 * $col;
+  font-size: 0.8em;
+  li {
+    list-style: none;
+    padding: em(16px) em(20px);
+    border-bottom: 1px solid lightblue;
+
+    &:hover {
+      color: #000;
+      background-color: lightblue;
+      cursor: pointer;
+      a {
+        color: #000;
+      }
+    }
+  }
+}

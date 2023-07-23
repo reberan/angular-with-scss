@@ -27,7 +27,7 @@ $footer-background-color: navy;
   $secondary-color: #ccc;
   $ternary-color: #bbb;
   $link-color: #eee;
-  $link-active-color: #666;
+  $link-active-color: #760000;
   $menu-item-color: #aaa;
   $body-background-color: black;
   $header-background-color: black;
@@ -38,7 +38,7 @@ $footer-background-color: navy;
   $secondary-color: #333;
   $ternary-color: #444;
   $link-color: #222;
-  $link-active-color: #555;
+  $link-active-color: #760000;
   $menu-item-color: #000;
   $body-background-color: white;
   $header-background-color: white;
@@ -61,10 +61,10 @@ $text-font: "Alegreya Sans", Arial, sans-serif;
 $headline-font: "Titillium Web", Georgia, serif;
 
 // === SIZES ===
-$header-height: 60px;
-$content-width: 960px;
-$main-width: 940px;
+$header-height: 70px;
+$content-width: 1080px;
+$main-width: 1080px;
 $footer-height: 70px;
 $col: col-width(
-  $columns: 8,
+  $columns: 12,
 );

@@ -1,0 +1,33 @@
+<article id="overview">
+  <h2>1. Overview</h2>
+  <img
+    src="assets/diagrams/service-structure.jpg"
+    alt="service-structure.png"
+    class="diagram"
+  />
+  <p>
+    The overview diagram above shows the layering from the level of the
+    repositories to the remote services. We will move from the bottom up in the
+    layering, i.e. from the entities in the repository to the local and finally
+    the remote services.
+  </p>
+  <p>
+    The starting point are the individual entities that are labeled ENTITY in
+    the diagram. The entities are essentially database table images with
+    relationships represented as Java classes and annotated to take advantage of
+    Hibernate's persistence mechanism.
+  </p>
+  <p>
+    The repositories in the next step then provide the basis of the persistence
+    infrastructure and can be expanded with the necessary functionality as
+    required.
+  </p>
+  <p>
+    The local services offer the externally visible functionality using the
+    repositories.
+  </p>
+  <p>
+    Finally, services can also be offered in a distributed environment as remote
+    services.
+  </p>
+</article>

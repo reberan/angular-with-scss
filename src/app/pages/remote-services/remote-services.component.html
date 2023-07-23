@@ -1,0 +1,56 @@
+<article id="remote-services">
+  <h2>6. Remote Services</h2>
+  <p>
+    The remote services are allowed to use simple data types and DTOs and do not
+    have direct access to the base entities, in our case the POJOs Animal and
+    Zoo. AnimalDTO and ZooDTO are available for this, which are suitable for
+    serialization and transmission in distributed systems.
+  </p>
+  <p>
+    In addition to the rather simple CRUD functionalities, which are already
+    covered at the repository level, complex services can be created, which then
+    appear in the Services layer in the figure below and exclusively use the
+    functionality of the ProcessingService. In our example, we turn directly to
+    Remote Services.
+  </p>
+  <img
+    src="assets/diagrams/remote-services.png"
+    alt="remote-services.png"
+    class="diagram"
+  />
+  <p>
+    The remote interface and the DTOs are deliberately created in a different
+    project to prevent the use of certain classes according to layering (in
+    customer-specific projects in the base folder).
+  </p>
+  <p>
+    The DTOs and RemoteServices are added in the wms_interface folder under the
+    same structure. This is because these make a connection to the outside world
+    and the client only loads such connections from wms_interface.
+  </p>
+  <p>
+    The DTOs (Data Transfer Object) are used in distributed systems to exchange
+    information. Data from multiple tables is often bundled together to minimize
+    the number of calls to relevant data. The DTOs of our example ZooDTO and
+    AnimalDTO look like this.
+  </p>
+  <pre> class AnimalDTO</pre>
+  <pre> class ZooDTO</pre>
+  <p>
+    Finally, the interfaces for the RMI services can be defined. Records can be
+    created with 'create'. Read with 'read'. Return all records with 'findAll'.
+    Check for existence with 'exists'. Deletion is done with 'delete'. In
+    addition, all animals can be queried for a zoo. Special services are the
+    listing of all animals of a given species and the listing of all zoos from a
+    given country.
+  </p>
+  <pre> interface IRemoteAnimalService </pre>
+  <pre> interface IRemoteZooService </pre>
+  <p>
+    The implementation is listed below. Of course, most of the work is done by
+    the previously defined local services AnimalService and ZooService, but only
+    the DTO objects are allowed to be transmitted.
+  </p>
+  <pre> class RemoteAnimalService </pre>
+  <pre> class RemoteZooService </pre>
+</article>

@@ -1,0 +1,38 @@
+<article id="database-queries">
+  <h2>5. Database Queries</h2>
+  <p>
+    QueryDSL is used so that database queries can be written in a type-safe
+    language (and not simply as native string SQL expressions). So that all
+    database queries of a domain are not scattered everywhere in the code
+  </p>
+
+  <pre> class AnimalPredicate </pre>
+  <pre> class ZooPredicate </pre>
+
+  <p>
+    The QAnimal and QZoo classes are automatically generated to have the fields
+    available for the queries. Since our repositories are derived from
+    WmsGenericRepository&lt;T, ID&gt;, as mentioned above, and this in turn uses
+    the QueryDslPredicateExecutor&lt;T&gt; interface, we have all these database
+    query options at our disposal. The generation of the files is triggered by
+    Eclipse → Maven → Update Project (or in IntelliJ right-click on project
+    folder → Maven → Generate Sources and Update Project).
+  </p>
+
+  <pre>
+public interface WmsGenericRepository&lt;T, ID extends Serializable>
+extends JpaRepository&lt;T, ID&gt;, QueryDslPredicateExecutor&lt;T&gt; ...</pre
+  >
+
+  <p>
+    I won't go into the details here, but I'll briefly explain what each method
+    does. The BooleanExpression isSpecies(String species) method returns an
+    expression that checks whether the species field contains the given string.
+    The % signs are wildcards for Oracle SQL queries. This is not solved very
+    nicely in this example. Ideally, wildcards are always identified with e.g. *
+    and the logic then converts this into the correct syntax depending on the
+    database. The BooleanExpression isFromCountry(String country) method returns
+    an expression that checks the country field for equality with the passed
+    string.
+  </p>
+</article>

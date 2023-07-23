@@ -1,0 +1,40 @@
+<article id="repository">
+  <h2>3. Repository</h2>
+  <p>
+    This means that the preparations have been made to create a repository that
+    provides the basic database functions (including the CRUD methods) for our
+    two classes, Zoo and Animal.
+  </p>
+  <p>
+    What kind of information do we want to get from a repository besides the
+    basic queries?
+  </p>
+  <p>
+    For a zoo we will surely want to get a list of all the animals in that zoo
+    and of course know how many animals there are in the zoo.
+  </p>
+  <p>
+    In addition, we would like to receive a list of animals of a specific
+    species for the selected zoo.
+  </p>
+  <p>For an animal, we want to know which zoo it belongs to.</p>
+  <img
+    src="assets/diagrams/repository.png"
+    alt="repository.png"
+    class="diagram"
+  />
+  <p>
+    In the given example, the repositories are not customized. If this were
+    desired, an interface AnimalRepositoryCustom and/or ZooRepositoryCustom with
+    the associated implementation AnimalRepositoryCustomImpl and/or
+    ZooRepositoryCustomImpl would be created and used accordingly. Attached are
+    the repositories for the two entities.
+  </p>
+  <pre> class AnimalRepository</pre>
+  <pre> class ZooRepository</pre>
+
+  <p>An insight into the class implemeting the interface</p>
+  <pre> WmsGenericRepository&lt;T, ID&gt;</pre>
+  <p>can be found here</p>
+  <pre> WmsGenericRepositoryImpl&lt;T, ID&gt;</pre>
+</article>

@@ -48,3 +48,7 @@
 .active-link {
   color: $link-active-color;
 }
+
+.diagram {
+  max-width: $content-width * 0.8;
+}

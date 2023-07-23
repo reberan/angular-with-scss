@@ -1,0 +1,12 @@
+@import "src/scss/partials/variables";
+@import "src/scss/partials/mixins";
+
+#footer {
+  @include box($border: 1px, $radius: 8px);
+  @include box-shadow(1px 0px 8px #0074aa, 1px 0px 8px $ternary-color);
+  height: $footer-height;
+  background-color: $footer-background-color;
+  @include rogers-rovers {
+    border-top: 5px solid darken($color: $ternary-color, $amount: 15%);
+  }
+}

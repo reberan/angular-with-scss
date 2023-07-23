@@ -1,0 +1,7 @@
+@import "src/scss/partials/variables";
+
+#content {
+  float: left;
+  width: 9 * $col;
+  max-height: calc(100vh - $header-height - $footer-height - 1%);
+}

@@ -1,0 +1,52 @@
+@use "sass:math";
+
+@import "src/scss/partials/variables";
+@import "src/scss/partials/mixins";
+
+#header {
+  @include box($border: 1px, $radius: 8px);
+  @include box-shadow(1px 0px 8px #1e1bd6, 1px 0px 8px $ternary-color);
+
+  background-color: $header-background-color;
+  display: block;
+  height: $header-height;
+  margin: 0;
+  left: 0.5em;
+  right: 0.5em;
+  font-size: 1.5em;
+  text-align: center;
+  align-items: center;
+
+  @include large-screens {
+    height: 1.1 * $header-height;
+  }
+  @include medium-screens {
+    height: 1.3 * $header-height;
+  }
+
+  #main-menu {
+    display: flex;
+
+    li {
+      display: inline;
+      list-style: none;
+      padding: 5px;
+      margin: 5px;
+    }
+
+    a {
+      color: $menu-item-color;
+      padding: 6px 8px;
+      border-bottom: 1px solid transparentize($color: #fefefe, $amount: 1);
+      transition: border-bottom 1s;
+      transition-timing-function: ease-in-out;
+
+      &:hover {
+        border-bottom: 1px solid opacify($color: red, $amount: 0.5);
+      }
+    }
+  }
+  #logo {
+    @include avatar;
+  }
+}

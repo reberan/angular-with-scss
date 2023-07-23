@@ -1,49 +1,11 @@
 @use "sass:math";
-
-@import "./../scss/partials/variables";
-@import "./../scss/partials/mixins";
-
-#header {
-  @include box($border: 1px, $radius: 8px);
-  @include box-shadow(1px 0px 8px #1e1bd6, 1px 0px 8px $ternary-color);
-
-  background-color: $header-background-color;
-  display: block;
-  height: $header-height;
-  margin: 0;
-  left: 0.5em;
-  right: 0.5em;
-
-  #main-menu {
-    display: flex;
-
-    li {
-      display: inline;
-      list-style: none;
-    }
-
-    a {
-      color: $menu-item-color;
-      padding: 6px 8px;
-      border-bottom: 1px solid transparentize($color: #fefefe, $amount: 1);
-      transition: border-bottom 1s;
-      transition-timing-function: ease-in-out;
-
-      &:hover {
-        border-bottom: 1px solid opacify($color: #fefefe, $amount: 0.5);
-      }
-    }
-  }
-  #logo {
-    @include avatar;
-  }
-}
+@import "src/scss/partials/mixins";
+@import "src/scss/partials/variables";
 
 #main {
   margin: 0 auto;
-  margin-bottom: -$footer-height;
   width: $content-width;
-  max-height: calc(100vh - $footer-height);
+  max-height: calc(100vh - $footer-height - $header-height);
   height: calc(100vh - $footer-height);
   overflow: auto;
 
@@ -52,39 +14,5 @@
     color: lightblue;
     font-size: 80%;
     max-width: math.div($content-width, 1.5);
-  }
-
-  #content {
-    float: left;
-    width: 6 * $col;
-    max-height: calc(100vh - $header-height - $footer-height - 1%);
-    overflow-y: scroll;
-  }
-
-  #sidebar {
-    float: right;
-    width: 2 * $col;
-
-    li {
-      list-style: none;
-      padding: em(16px) em(20px);
-      border-bottom: 1px solid yellowgreen;
-
-      &:hover {
-        color: #efefef;
-        background-color: yellowgreen;
-        cursor: pointer;
-      }
-    }
-  }
-}
-
-#footer {
-  @include box($border: 1px, $radius: 8px);
-  @include box-shadow(1px 0px 8px #0074aa, 1px 0px 8px $ternary-color);
-  height: $footer-height;
-  background-color: $footer-background-color;
-  @include rogers-rovers {
-    border-top: 5px solid darken($color: $ternary-color, $amount: 15%);
   }
 }

@@ -2,6 +2,50 @@
 @import "./partials/variables";
 @import "./partials/mixins";
 
+// this will generate 6x .col-x classes
+@for $i from 1 through 6 {
+  .col-#{$i} {
+    width: $i * 2em;
+  }
+}
+
+// this will generate ONLY 5x .col-x classes
+@for $i from 1 to 6 {
+  .col-#{2*$i} {
+    width: $i * 2em;
+  }
+}
+
+// this will generate the same CSS of the previous loop
+$j: 2;
+@while $j < 6 {
+  .col-#{2*$j} {
+    width: $j * 2em;
+  }
+  $j: $j + 1;
+}
+
+// a list
+$speakers: bob-banker, patty-plume, sandra-smith;
+// foreach element in the list
+@each $speaker in $speakers {
+  .#{$speaker}-profile {
+    background-image: url("/img/#{$speaker}.png");
+  }
+}
+
+$font-sizes: (
+  tiny: 8px,
+  small: 11px,
+  medium: 13px,
+  large: 18px,
+);
+@each $name, $size in $font-sizes {
+  .#{$name} {
+    font-size: $size;
+  }
+}
+
 @include google-font("Alegreya+Sans");
 @include google-font("Titillium+Web");
 
@@ -14,6 +58,7 @@
 }
 * {
   -ms-overflow-style: none;
+  scrollbar-width: none;
   &::-webkit-scrollbar {
     display: none;
   }
@@ -33,7 +78,10 @@ body {
     color: #aaa;
   }
   @include large-screens {
-    font-size: 125%;
+    font-size: 90%;
+  }
+  @include medium-screens {
+    font-size: 80%;
   }
 }
 
@@ -43,7 +91,9 @@ h3,
 h4 {
   font-family: $headline-font;
 }
-
+h1 {
+  @include extra-large-text;
+}
 h2 {
   @include large-text;
 }

@@ -1,0 +1,41 @@
+<article id="local-services">
+  <h2>4. Local Services</h2>
+  <h3>4.1 Basic Services</h3>
+  <p>
+    The local services containing the necessary database queries can now be
+    developed on the basis of the repository functionality.
+  </p>
+
+  <img
+    src="assets/diagrams/local-services.png"
+    alt="local-services.png"
+    class="diagram"
+  />
+  <p>
+    First the service interfaces are defined. In addition to the standard
+    methods, the ZooService should also return a list of zoos for a specific
+    country.
+  </p>
+
+  <pre> interface IAnimalService </pre>
+  <pre> interface IZooService </pre>
+
+  <p>
+    In our example, little additional functionality is offered for the
+    AbstractBaseEntityService. Of course, this also means that the
+    implementation classes are correspondingly simple. The implementation of the
+    additional services takes place using QueryDSL and predicates (see Database
+    Queries) to deliver the desired result set. In addition to the standard
+    methods listed in IBaseEntityService (NEW: AbstractBaseEntityService), the
+    AnimalService should also be able to return a list of animals for a specific
+    species.
+  </p>
+
+  <pre> class AnimalService </pre>
+  <pre> class ZooService </pre>
+  <p>
+    According to our architecture, queries must be made visible to the outside
+    via an interface IZooQueryService and IAnimalQueryService. We skip this part
+    here and use it directly via I&lt;Entity&gt;Service. &lt;/Entity&gt;
+  </p>
+</article>

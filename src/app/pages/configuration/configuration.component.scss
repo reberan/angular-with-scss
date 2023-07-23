@@ -1,0 +1,23 @@
+@import "src/scss/partials/mixins";
+@import "src/scss/partials/functions";
+.info-box {
+  @include rounded;
+  @include box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  border-color: navy 2px solid;
+  background-color: rgb(192, 243, 243);
+  padding: 0.5em;
+  .info-box-title {
+    font-weight: bold;
+    color: rgb(86, 86, 215);
+  }
+  .info-box-title::before {
+    content: "\1f6c8";
+    font-weight: 400;
+  }
+  .info-box-message {
+    margin: 0.4em 0px;
+    font-size: 0.75em;
+    color: rgb(126, 126, 208);
+  }
+}
