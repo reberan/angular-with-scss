@@ -22,7 +22,7 @@
     file.
   </p>
 
-  <pre> xml </pre>
+  <pre> config-wms-ord-zoo-service.xml </pre>
 
   <p>
     In order for the file to be loaded, a corresponding reference must be
@@ -30,25 +30,28 @@
     file.
   </p>
 
-  <pre></pre>
+  <pre>config-wms-ord-generalservice.xml</pre>
+
   <p>
-    In the <b> config-wms-ord-remoteservices.xml </b>
+    In the <b> config-wms-ord-remoteservices.xml</b>
     file, the RMI services are registered as beans.
   </p>
 
-  <pre> xml </pre>
+  <pre> config-wms-ord-remoteservices.xml</pre>
+
   <p>
     And finally, on the client side, the following configurations are made in
     the <b> config-client-remoteservices-wms.xml </b>
     file.
   </p>
 
-  <pre> xml </pre>
+  <pre> config-client-remoteservices-wms.xml</pre>
+
   <p>
     All the necessary configurations have now been created and the services can
     be tested. To use the Remote Services in a distributed environment and not
     on a PC as in this example, the appropriate entries must be made in the
-    site.properties file.
+    <b>site.properties</b> file.
   </p>
 
   <h3>7.1 Automatic adjustments to the schema</h3>
@@ -69,5 +72,5 @@
     can also be found by the JPA.
   </p>
 
-  <pre> xml </pre>
+  <pre> config-wms-hibernate-PRJ.xml</pre>
 </article>

@@ -1,6 +1,5 @@
 <article id="testing">
   <h2>8. Testing</h2>
-
   <h3>8.1 Unit test</h3>
   <p>
     For general testing, see
@@ -9,11 +8,17 @@
     >.
   </p>
   <p>
-    The updating of the schema is controlled in the same way as the core
-    configuration. However, the test-config-wms-database.xml file is relevant
-    here. The value for hibernate.hbm2ddl.auto should be set to at least update.
-    To ensure that both the schema is up-to-date and that there is no legacy
-    data, the create value is optimal.
+    The updating of the schema is controlled in the same way as the
+    <a
+      href="https://wiki.sswdev.stoecklin.com/pages/viewpage.action?pageId=18055561"
+      >core configuration</a
+    >.
+  </p>
+  <p>
+    However, the Data <i>test-config-wms-database.xml</i> file is relevant here.
+    The value for hibernate.hbm2ddl.auto should be set to at least
+    <i>update</i>. To ensure that both the schema is up-to-date and that there
+    is no legacy data, the <i>create</i> value is optimal.
   </p>
   <p>
     The test is run with DB user itest. This is also configured in the
@@ -26,11 +31,11 @@
     configuration. The procedure here is analogous to the core configuration.
   </p>
 
-  <pre> code </pre>
+  <pre> class ZooAnimalLocalServicesIT </pre>
 
   <p>The remote services could now also be tested in a similar way.</p>
 
-  <h2>8.2 Logging dialog</h2>
+  <h3>8.2 Logging dialog</h3>
   <p>
     The RemoteService are injected with the help of Spring and can then be used
     where desired. Attached is a dialog version to illustrate the integration of
@@ -39,21 +44,22 @@
     and automatically, are used for tests.
   </p>
   <p>
-    For this quick-and-dirty testing, a LogTestDialog was added using Swing
-    under the help menu, which displays the log data.
+    For this <i>quick-and-dirty</i> testing, a <i>LogTestDialog</i> was added
+    using Swing under the help menu, which displays the log data.
   </p>
 
-  <pre> code </pre>
+  <pre> class LogTestDialog </pre>
 
   <p>
     The calling action is defined below and is registered as a bean using Spring
-    in the masterconsole.xml configuration file.
+    in the <b>masterconsole.xml</b> configuration file.
   </p>
 
-  <pre> code </pre>
+  <pre> class LogTestAction</pre>
+
   <p>Entries in <b> masterconsole.xml </b></p>
 
-  <pre> xml </pre>
+  <pre> masterconsole.xml </pre>
 
   Attached is the start of the log display.
 
